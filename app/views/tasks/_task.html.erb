@@ -1,12 +1,31 @@
-<div id="<%= dom_id task %>">
-  <div>
-    <strong>Title:</strong>
+<div id="<%= dom_id task %>" style="padding: 15px; border-bottom: 1px solid #eeeeee; margin-bottom: 10px; font-family: system-ui, -apple-system, sans-serif;">
+  
+  <div style="font-size: 18px; font-weight: 600; color: #333333; margin-bottom: 6px;">
     <%= task.title %>
   </div>
 
+  <div style="margin-bottom: 8px;">
+    <% if task.due_date.present? %>
+      <span style="font-size: 14px; color: #666666; background-color: #f0f4f8; padding: 4px 8px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;">
+        📅 Due: <strong><%= task.due_date.strftime("%B %d, %Y") %></strong>
+      </span>
+    <% else %>
+      <span style="font-size: 14px; color: #aaaaaa; font-style: italic;">
+        No due date set
+      </span>
+    <% end %>
+  </div>
+
   <div>
-    <strong>Completed:</strong>
-    <%= task.completed %>
+    <% if task.completed %>
+      <span style="font-size: 12px; font-weight: 600; color: #1f513b; background-color: #d1e7dd; padding: 3px 8px; border-radius: 20px;">
+        ✅ Completed
+      </span>
+    <% else %>
+      <span style="font-size: 12px; font-weight: 600; color: #664d03; background-color: #fff3cd; padding: 3px 8px; border-radius: 20px;">
+        ⏳ Pending
+      </span>
+    <% end %>
   </div>
 
 </div>
