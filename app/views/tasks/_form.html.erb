@@ -29,6 +29,12 @@
     <%= form.label :completed, "Mark as Completed", style: "font-weight: 500; color: #444; font-size: 15px; cursor: pointer;" %>
   </div>
 
+           <!-- Canceled Checkbox Group -->
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px; padding: 10px 0;">
+    <%= form.checkbox :canceled, style: "width: 18px; height: 18px; cursor: pointer; accent-color: #0d6efd;" %>
+    <%= form.label :canceled, "Mark as Canceled", style: "font-weight: 500; color: #444; font-size: 15px; cursor: pointer;" %>
+  </div>
+
   <!-- Submit Button -->
   <div>
     <%= form.submit style: "width: 100%; background-color: #0d6efd; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 2px 4px rgba(13, 110, 253, 0.2);" %>
